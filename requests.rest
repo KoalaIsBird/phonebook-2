@@ -1,0 +1,58 @@
+### Delete a person
+DELETE http://localhost:3001/api/persons/66a0dccd341a3766f854159e
+
+
+### Get all persons
+GET http://localhost:3001/api/persons/
+
+
+
+### Post a person
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+
+{
+    "name": "joeeeeeeee",
+    "number": "111111111"
+}
+
+### Change a note
+PUT http://localhost:3001/api/persons/66a0dcda341a3766f85415a3
+Content-Type: application/json
+
+
+{
+    "name": "hi",
+    "number": "06184159480"
+}
+
+
+### Get a note
+GET http://localhost:3001/api/persons/66a0dcda341a3766f85415a3
+
+
+### Get info
+GET http://localhost:3001/info
+
+
+### on deployed app
+
+### Delete a person
+DELETE https://phonebook-6cqa.onrender.com/api/persons/1
+
+
+### Get all notes
+GET https://phonebook-6cqa.onrender.com/api/persons/
+
+
+
+### Post a note
+POST https://phonebook-6cqa.onrender.com/api/persons/
+Content-Type: application/json
+
+
+{
+    "name": "andrew",
+    "number": "0618"
+}
