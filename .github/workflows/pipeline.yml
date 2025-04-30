@@ -3,6 +3,10 @@ on:
     push:
         branches:
           - master
+    pull_request:
+      branches: [main]
+      types: [opened, synchronize]
+    
 
 jobs:
     build_and_deploy:
@@ -20,5 +24,5 @@ jobs:
               run: npm run build-frontend
 
             - name: Trigger deployment
-              if: ${{! contains(github.event.head_commit.message, '#skip')}}
+              if: ${{(!contains(github.event.head_commit.message, '#skip')) && (github.event_name == 'push')}}
               run: curl ${{secrets.RENDER_DEPLOY_URL}}
